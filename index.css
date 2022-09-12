@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 500px;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+/*  === start container style ===  */
+#container {
+    border: 1px solid black;
+    padding: 40px;
+    background-color: #1F2937;
+}
+
+/*  === start header(h1) style ===  */
+#header {
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.header-second-line {
+    display: block;
+    color: #4ADF86;
+    padding: 0px;
+    margin-top: -5px;
+}
+
+/*  === end header(h1) style ===  */
+
+/*  === start message style ===  */
+.support-message {
+    margin-top: 15px;
+    color: #D5D4D8;
+    margin-bottom: 30px;
+}
+
+/*  === start button style ===  */
+#btn {
+    background-color: #10B981;
+    color: white;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+/*  === end button style ===  */
+
+
+/*  === divided line style ===  */
+#top {
+    border-bottom: 1px solid #2F3E53;
+}
+
+
+/*  === start bottom section ===  */
+#bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*  === star password pera style ===  */
+.pass-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 211px;
+    height: 39px;
+    border-radius: 4px;
+    background-color: #273549;
+    color: #55F991;
+}
+
+/*  === end password pera style ===  */
+
+/*  === emty space between password pera ===  */
+.empty {
+    padding: 15px;
+}
