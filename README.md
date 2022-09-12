@@ -1,4 +1,9 @@
-# cR9B46Sg
+# about me 
+
+Hi, my name is Zishan. It's a random autometic password generator I built at scrimba.
+
+
+I'm still planning to add many more features in the future, like the ability to select the type of password or to copy to clipboard, etc.
 
 ## About Scrimba
 
