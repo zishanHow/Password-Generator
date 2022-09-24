@@ -10,7 +10,7 @@ suportMessage.textContent = "Never use an insecure password again"
 //   === characters for password === 
 const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?", "/"]
 
@@ -20,33 +20,26 @@ function getRandomCharacter() {
     let useSymbol = document.getElementById("use-symbol").checked
 
     if (useNumber && useSymbol) {
-        const arr = [alphabet, numbers, symbols]
-        //randomly select an array
-        let randomChar = Math.floor(Math.random() * arr.length)
-        //now select a random Item from that array
-        let randomCharIndex = Math.floor(Math.random() * arr[randomChar].length)
+        let tempArray = alphabet.concat(numbers).concat(symbols)
+        let randomChar = Math.floor(Math.random() * tempArray.length)
+        return tempArray[randomChar]
 
-        return arr[randomChar][randomCharIndex]
     } else if(useNumber) {
-        const arr = [alphabet, numbers]
-        let randomChar = Math.floor(Math.random() * arr.length)
-        let randomCharIndex = Math.floor(Math.random() * arr[randomChar].length)
+        let tempArray = alphabet.concat(numbers)
+        let randomChar = Math.floor(Math.random() * tempArray.length)
+        return tempArray[randomChar]
 
-        return arr[randomChar][randomCharIndex]
     } else if (useSymbol) {
-        const arr = [alphabet, symbols]
-        let randomChar = Math.floor(Math.random() * arr.length)
-        let randomCharIndex = Math.floor(Math.random() * arr[randomChar].length)
+        let tempArray = alphabet.concat(symbols)
+        let randomChar = Math.floor(Math.random() * tempArray.length)
+        return tempArray[randomChar]
 
-        return arr[randomChar][randomCharIndex]
     } else {
-        const arr = [alphabet]
-        let randomChar = Math.floor(Math.random() * arr.length)
-        let randomCharIndex = Math.floor(Math.random() * arr[randomChar].length)
-
-        return arr[randomChar][randomCharIndex]
+        let randomChar = Math.floor(Math.random() * alphabet.length)
+        return alphabet[randomChar]
     }
 }
+
 
 /*  === stitching all the characters from getRandomCharacter() and rendering it out on the DOM */
 function generateRandomPassword() {
