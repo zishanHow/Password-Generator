@@ -41,7 +41,7 @@ function getRandomCharacter() {
 }
 
 
-/*  === stitching all the characters from getRandomCharacter() and rendering it out on the DOM */
+/*  === stitching all the characters from getRandomCharacter() and rendering them out in the DOM */
 function generateRandomPassword() {
     let length = passLength.value
     if (length > 5 && length < 19) {

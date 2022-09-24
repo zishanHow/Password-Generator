@@ -7,4 +7,6 @@ Hi, my name is Zishan. It's a random automatic password generator I built at scr
 
 I'm still planning to add many more features in the future, like the ability to select the type of password or to copy to clipboard, etc.
 
- Added two feature. Where user can choose password type, and length of password user can select now.
+ Added two feature. Where user can choose password type, and length of password user can select now!!
+
+ add copy to clip board teature!!
