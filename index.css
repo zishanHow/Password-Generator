@@ -84,3 +84,7 @@ body {
 .empty {
     padding: 15px;
 }
+
+label {
+    color: white;
+}
