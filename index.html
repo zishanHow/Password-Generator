@@ -27,22 +27,23 @@
             <h1 id="header">Generate a <span class="header-second-line">random password</span></h1>
             <p class="support-message"></p>
 
-            <form>
-                <label for="pass-length">Choose Length(6 - 18)</label>
-                <input type="number" id="pass-length" name="pass-length" min="6" max="18" value="8">
+            <div class="input-and-btn">
+                <!--  password generator Button  -->
+                <button id="btn" onclick="passwordGenerator()">Generate passwords</button>
 
-                <br>
-                <label for="use-number">Use Number</label>
-                <input type="checkbox" id="use-number" name="use-number">
+                <form>
+                    <label for="pass-length">Length(6 - 18)</label>
+                    <input type="number" id="pass-length" name="pass-length" min="6" max="18" value="8">
 
-                <br>
-                <label for="use-symbol">Use Symbols</label>
-                <input type="checkbox" id="use-symbol" name="use-symbol">
-            </form>
+                    <br>
+                    <label for="use-number">Number(0-9)</label>
+                    <input type="checkbox" id="use-number" name="use-number">
 
-            <br><br>
-            <!--  password generator Button  -->
-            <button id="btn" onclick="passwordGenerator()">Generate passwords</button>
+                    <br>
+                    <label for="use-symbol">Symbols(~,/)</label>
+                    <input type="checkbox" id="use-symbol" name="use-symbol">
+                </form>
+            </div>
         </section>
 
         <!--  Bottom section  -->

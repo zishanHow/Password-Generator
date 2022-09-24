@@ -3,8 +3,8 @@ const passTwo = document.getElementById("pass-two")
 const suportMessage = document.querySelector(".support-message")
 const passLength = document.getElementById("pass-length")
 
-passOne.textContent = "See password one"
-passTwo.textContent = "See password two"
+passOne.textContent = "👀 👀"
+passTwo.textContent = "👀 👀"
 suportMessage.textContent = "Never use an insecure password again"
 
 //   === characters for password === 
