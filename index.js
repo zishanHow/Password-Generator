@@ -24,7 +24,7 @@ function getRandomCharacter() {
         let randomChar = Math.floor(Math.random() * tempArray.length)
         return tempArray[randomChar]
 
-    } else if(useNumber) {
+    } else if (useNumber) {
         let tempArray = alphabet.concat(numbers)
         let randomChar = Math.floor(Math.random() * tempArray.length)
         return tempArray[randomChar]
@@ -62,4 +62,15 @@ function generateRandomPassword() {
 function passwordGenerator() {
     passOne.textContent = generateRandomPassword()
     passTwo.textContent = generateRandomPassword()
+}
+
+/* copy to clip board */
+function copy() {
+    let notice = document.getElementById('notice')
+    navigator.clipboard.writeText(event.target.textContent)
+    notice.style.color = 'white'
+
+    setTimeout(() => {
+        notice.style.color = '#1F2937'
+    }, 500);
 }

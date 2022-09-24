@@ -103,6 +103,7 @@ label {
 /*  === end password pera style ===  */
 
 /*  === emty space between password pera ===  */
-.empty {
-    padding: 15px;
+#notice {
+    color: #1F2937;
+    padding: 9px 2px;
 }
