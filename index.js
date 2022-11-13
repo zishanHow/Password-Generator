@@ -36,19 +36,19 @@ let lengthNumber;
 let lengthSymbol;
 
 // showing value of range to the dom
-if(lengthLetter){
+if (lengthLetter) {
     letterValue.innerHTML = lengthLetter
-} else{
+} else {
     lengthLetter = letterValue.innerHTML = rangeLetterEl.value
 }
 
-if(lengthNumber){
+if (lengthNumber) {
     numValue.innerHTML = lengthNumber
 } else {
     lengthNumber = numValue.innerHTML = rangeNumEl.value
 }
 
-if(lengthSymbol){
+if (lengthSymbol) {
     symbolValue.innerHTML = lengthSymbol
 } else {
     lengthSymbol = symbolValue.innerHTML = rangeSymbolEl.value
@@ -60,18 +60,18 @@ if(lengthSymbol){
 // }
 
 rangeLetterEl.addEventListener('input', e => {
-    lengthLetter = letterValue.innerHTML = e.target.value 
+    lengthLetter = letterValue.innerHTML = e.target.value
 })
 
-rangeNumEl.addEventListener('input', e => 
+rangeNumEl.addEventListener('input', e =>
     lengthNumber = numValue.innerHTML = e.target.value)
 
-rangeSymbolEl.addEventListener('input', e => 
+rangeSymbolEl.addEventListener('input', e =>
     lengthSymbol = symbolValue.innerHTML = e.target.value)
 
-    
-function generateRandomLetters(){
-    for(let i = 0; i < lengthLetter; i++){
+
+function generateRandomLetters() {
+    for (let i = 0; i < lengthLetter; i++) {
         let RanLetter = alphabet[Math.floor(Math.random() * alphabet.length)]
         randomLettersArr.push(RanLetter)
         randomLettersStr += randomLettersArr[i]
@@ -79,8 +79,8 @@ function generateRandomLetters(){
     return randomLettersStr
 }
 
-function generateRandomNumbers(){
-    for(let i = 0; i < lengthNumber; i++){
+function generateRandomNumbers() {
+    for (let i = 0; i < lengthNumber; i++) {
         let ranNumber = numbers[Math.floor(Math.random() * numbers.length)]
         randomNumbersArr.push(ranNumber)
         randomNumbersStr += randomNumbersArr[i]
@@ -88,8 +88,8 @@ function generateRandomNumbers(){
     return randomNumbersStr
 }
 
-function generateRandomSymbols(){
-    for(let i = 0; i < lengthSymbol; i++){
+function generateRandomSymbols() {
+    for (let i = 0; i < lengthSymbol; i++) {
         let ranSymbol = symbols[Math.floor(Math.random() * symbols.length)]
         randomSymbolsArr.push(ranSymbol)
         randomSymbolsStr += randomSymbolsArr[i]
@@ -98,7 +98,7 @@ function generateRandomSymbols(){
 }
 
 
-function shufflePassCharacter(password){
+function shufflePassCharacter(password) {
     let passwordArr = password.split("");// The password is a String and is converted to an array
 
     passwordArr.sort(() => 0.5 - Math.random())// return a random value each time the function is called
@@ -109,24 +109,27 @@ function shufflePassCharacter(password){
 }
 
 
-function reset(){
+function reset() {
     randomLettersArr = []
     randomNumbersArr = []
     randomSymbolsArr = []
-    
+
     randomLettersStr = ""
     randomNumbersStr = ""
     randomSymbolsStr = ""
 }
 
-function generatePass(){
+let showPass1;
+let showPass2;
+
+function generatePass() {
     let password1 = generateRandomLetters() + generateRandomNumbers() + generateRandomSymbols()
     reset()
     let password2 = generateRandomLetters() + generateRandomNumbers() + generateRandomSymbols()
     reset()
 
-    let showPass1 = shufflePassCharacter(password1)
-    let showPass2 = shufflePassCharacter(password2)
+    showPass1 = shufflePassCharacter(password1)
+    showPass2 = shufflePassCharacter(password2)
 
     displayPass1.innerHTML = showPass1
     reset()
@@ -135,7 +138,7 @@ function generatePass(){
 }
 
 
-function clearDisplayPassword(){
+function clearDisplayPassword() {
     displayPass1.innerHTML = ""
     displayPass2.innerHTML = ""
     lengthLetter = 0
@@ -149,15 +152,25 @@ function clearDisplayPassword(){
     letterValue.innerHTML = rangeLetterEl.value
     numValue.innerHTML = rangeNumEl.value
     symbolValue.innerHTML = rangeSymbolEl.value
-    
+
     reset()
 }
 
-function copyPass1(){
+function copyPass1() {
     navigator.clipboard.writeText(displayPass1.innerHTML)
+
+    displayPass1.innerHTML = `<P>Copied</p>`
+    setTimeout(() => {
+        displayPass1.innerHTML = showPass1
+    }, 500)
 }
-function copyPass2(){
+function copyPass2() {
     navigator.clipboard.writeText(displayPass2.innerHTML)
+
+    displayPass2.innerHTML = `<P>Copied</p>`
+    setTimeout(() => {
+        displayPass2.innerHTML = showPass1
+    }, 500)
 }
 
 generatePassBtn.addEventListener("click", generatePass)
@@ -165,102 +178,3 @@ clearBtn.addEventListener("click", clearDisplayPassword)
 
 copyDisplayPass1.addEventListener("click", copyPass1)
 copyDisplayPass2.addEventListener("click", copyPass2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const passOne = document.getElementById("pass-one")
-const passTwo = document.getElementById("pass-two")
-const passLength = document.getElementById("pass-length")
-
-passOne.textContent = "👀 👀"
-passTwo.textContent = "👀 👀"
-
-//   === characters for password === 
-/* const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?", "/"]
- */
-
-
-/*  === generating random characters ===  */
-function getRandomCha() {
-    let useNumber = document.getElementById("use-number").checked
-    let useSymbol = document.getElementById("use-symbol").checked
-
-    if (useNumber && useSymbol) {
-        let tempArray = alphabet.concat(numbers).concat(symbols)
-        let randomChar = Math.floor(Math.random() * tempArray.length)
-        return tempArray[randomChar]
-
-    } else if (useNumber) {
-        let tempArray = alphabet.concat(numbers)
-        let randomChar = Math.floor(Math.random() * tempArray.length)
-        return tempArray[randomChar]
-
-    } else if (useSymbol) {
-        let tempArray = alphabet.concat(symbols)
-        let randomChar = Math.floor(Math.random() * tempArray.length)
-        return tempArray[randomChar]
-
-    } else {
-        let randomChar = Math.floor(Math.random() * alphabet.length)
-        return alphabet[randomChar]
-    }
-}
-
-
-/*  === stitching all the characters from getRandomCha() and rendering them out in the DOM */
-function generateRandomPassword() {
-    let length = passLength.value
-    if (length > 5 && length < 19) {
-        let randomPassword = ""
-        for (let i = 0; i < length; i++) {
-            randomPassword += getRandomCha()
-        }
-        return randomPassword
-    } else if (length <= 5) {
-        return "Too Short"
-
-    } else if (length >= 19) {
-        return "Too big"
-    }
-}
-
-/*  === calling the button to generate new password ===  */
-function passwordGenerator() {
-    passOne.textContent = generateRandomPassword()
-    passTwo.textContent = generateRandomPassword()
-}
-
-/* copy to clip board */
-function copy() {
-    let notice = document.getElementById('notice')
-    navigator.clipboard.writeText(event.target.textContent)
-    notice.style.color = 'white'
-
-    setTimeout(() => {
-        notice.style.color = '#1F2937'
-    }, 500);
-}

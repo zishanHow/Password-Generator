@@ -17,16 +17,24 @@ body {
     max-width: 700px;
     width: 100%;
     border: 1px solid black;
-    padding: 2.5em;
+    padding: 1.5em;
     background-color: #1F2937;
 }
+
+@media (min-width: 500px) {
+    .container {
+        padding: 2.5em;
+    }
+}
+
 /* ======================
         Start header 
    ======================*/
-header{
+header {
     color: white;
     margin-bottom: 1.875em;
 }
+
 header h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -45,6 +53,7 @@ header .support-message {
     font-weight: 700;
     opacity: 0.4;
 }
+
 /* ======================
         End header 
    ======================*/
@@ -60,14 +69,14 @@ section.setting .Settings {
     margin-bottom: .3em;
 }
 
-.pass-setting{
+.pass-setting {
     border-top: 1px solid #273549;
     border-bottom: 1px solid #273549;
 }
 
 .number,
 .letter,
-.symbol{
+.symbol {
     margin: .8em 0;
     display: flex;
     gap: 10px;
@@ -79,7 +88,7 @@ section.setting .Settings {
 .symbol .s-p,
 .num-value,
 .letter-value,
-.symbol-value{
+.symbol-value {
     color: #D5D4D8;
     font-weight: 700;
     letter-spacing: 1px;
@@ -88,14 +97,14 @@ section.setting .Settings {
 
 .number .s-p,
 .letter .s-p,
-.symbol .s-p{
+.symbol .s-p {
     min-width: 95px;
 }
 
 /* =========================
     ---  slider design  ---
    ========================= */
-.slider{
+.slider {
     -webkit-appearance: none;
     appearance: none;
 
@@ -110,11 +119,10 @@ section.setting .Settings {
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
 
-    /* margin-top: 20px; */
     border-radius: 2px;
 }
 
-.slider::-webkit-slider-thumb{
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
 
@@ -126,7 +134,7 @@ section.setting .Settings {
 }
 
 /* for mozilla browser */
-.slider::-moz-range-thumb{
+.slider::-moz-range-thumb {
     width: 0.9375em;
     height: 0.9375em;
 
@@ -135,16 +143,14 @@ section.setting .Settings {
 }
 
 .slider:hover,
-.slider:focus{
+.slider:focus {
     opacity: 1;
 }
-
-
 
 /* =======================
     generate-pass section    
    =======================*/
-section.generate-pass{
+section.generate-pass {
     margin-top: 1.5em;
 }
 
@@ -160,21 +166,14 @@ section.generate-pass{
 }
 
 
-.placeholder{
+.placeholder {
     margin-top: 1.5em;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-@media(min-width: 480px){
-    .placeholder{
-        flex-direction: row;
-    }
-}
-
-.placeholder-pass{
+.placeholder-pass {
     border: 1px solid red;
     width: 100%;
     min-height: 2.4375em;
@@ -185,14 +184,18 @@ section.generate-pass{
 
     line-height: 30px;
 
-    background-color: #374151; /* #374151 */
-    border: 2px solid #273549; /* #273549 */
+    overflow-y: auto;
+
+    background-color: #374151;
+    /* #374151 */
+    border: 2px solid #273549;
+    /* #273549 */
     border-radius: 5px;
 
 }
 
-@media(min-width: 480px){
-    .placeholder-pass{
+@media(min-width: 480px) {
+    .placeholder-pass {
         max-width: 43%;
     }
 }
@@ -203,18 +206,14 @@ i {
     font-size: 1.5rem;
     color: #D5D4D8;
 }
-@media(min-width: 600px){
+
+@media(min-width: 600px) {
     i {
         font-size: 2rem;
     }
 }
-/* @media(min-width: 480px){
-    i{
-        text-align: right;
-    }
-} */
 
-.clear-btn{
+.clear-btn {
     font-size: 1rem;
     color: #ffffff;
     margin-top: 1em;
@@ -226,90 +225,6 @@ i {
 }
 
 .clear-btn:hover,
-.clear-btn:focus{
+.clear-btn:focus {
     background-color: #374151;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* input field and button */
-label {
-    color: #edf2f4;
-}
-
-.input-and-btn {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-#pass-length {
-    text-align: center;
-    width: 40px;
-    border: 1px solid #e63946;
-    background-color: #edf2f4;
-    color: #1d3557;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/*  === start button style ===  */
-/* #btn {
-    background-color: #10B981;
-    color: white;
-    padding: 7px 15px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 15px;
-} */
-
-/*  === end button style ===  */
-
-
-/*  === divided line style ===  */
-#top {
-    border-bottom: 1px solid #2F3E53;
-}
-
-
-/*  === start bottom section ===  */
-#bottom {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-/*  === star password pera style ===  */
-.pass-style {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 211px;
-    height: 39px;
-    border-radius: 4px;
-    background-color: #273549;
-    color: #55F991;
-    box-shadow: 0px 0px 4px black;
-}
-
-/*  === end password pera style ===  */
-
-/*  === emty space between password pera ===  */
-#notice {
-    color: #1F2937;
-    padding: 9px 2px;
 }
