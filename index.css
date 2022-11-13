@@ -148,7 +148,7 @@ section.generate-pass{
     margin-top: 1.5em;
 }
 
-.btn {
+.generate-pass-btn {
     color: white;
     background-color: #10B981;
     font-size: 1.2rem;
@@ -178,6 +178,12 @@ section.generate-pass{
     border: 1px solid red;
     width: 100%;
     min-height: 2.4375em;
+
+    color: #D5D4D8;
+    text-align: center;
+    font-weight: 900;
+
+    line-height: 30px;
 
     background-color: #374151; /* #374151 */
     border: 2px solid #273549; /* #273549 */

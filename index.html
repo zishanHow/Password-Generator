@@ -39,36 +39,37 @@
                 <div class="pass-setting">
                     <div class="number">
                         <p class="s-p">Numbers</p>
-                        <input type="range" min="0" max="10" value="0" class="slider">
-                        <p class="num-value">0</p>
+                        <input type="range" min="0" max="10" value="0" class="slider" id="range-num">
+                        <p class="num-value" id="num-value"></p>
                     </div>
 
                     <div class="letter">
                         <p class="s-p">Lettets</p>
-                        <input type="range" min="0" max="10" value="0" class="slider">
-                        <p class="letter-value">0</p>
+                        <input type="range" min="0" max="10" value="0" class="slider" id="range-letter">
+                        <p class="letter-value" id="letter-value"></p>
                     </div>
 
                     <div class="symbol">
                         <p class="s-p">Symbols</p>
-                        <input type="range" min="0" max="10" value="0" class="slider">
-                        <p class="symbol-value">0</p>
+                        <input type="range" min="0" max="10" value="0" class="slider" id="range-symbol">
+                        <p class="symbol-value" id="symbol-value"></p>
                     </div>
                 </div>
             </section>
 
             <section class="generate-pass">
-                <button class="btn" id="btn" onclick="passwordGenerator()">Generate passwords</button>
+                <button class="generate-pass-btn" id="generate-pass-btn" onclick="passwordGenerator()">Generate
+                    passwords</button>
 
                 <div class="placeholder">
-                    <p class="placeholder-pass"></p>
-                    <i class="fa-solid fa-copy"></i>
+                    <p class="placeholder-pass" id="display-pass1"></p>
+                    <i class="fa-solid fa-copy" id="copy-display-pass1"></i>
 
-                    <p class="placeholder-pass"></p>
-                    <i class="fa-solid fa-copy"></i>
+                    <p class="placeholder-pass" id="display-pass2"></p>
+                    <i class="fa-solid fa-copy" id="copy-display-pass2"></i>
                 </div>
 
-                <button class="clear-btn">Clear</button>
+                <button class="clear-btn" id="clear-btn">Clear</button>
             </section>
         </main>
     </div>
