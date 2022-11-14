@@ -13,12 +13,18 @@ body {
 /*  === start container style ===  */
 .container {
     margin: 0 auto;
-    /* margin-top: 10%; */
-    max-width: 700px;
+    max-width: 900px;
     width: 100%;
     border: 1px solid black;
-    padding: 1.5em;
+    border-radius: 10px;
+    padding: 1em;
     background-color: #1F2937;
+}
+
+@media(min-width: 350px) {
+    .container {
+        padding: 1.5em;
+    }
 }
 
 @media (min-width: 500px) {
@@ -169,8 +175,29 @@ section.generate-pass {
 .placeholder {
     margin-top: 1.5em;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: .5em;
+    width: 100%;
+}
+
+.placeholder-parant {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 400px) {
+    .placeholder {
+        flex-direction: row;
+        gap: 2%;
+    }
+
+    .placeholder-parant {
+        width: 47%;
+    }
 }
 
 .placeholder-pass {
@@ -194,23 +221,14 @@ section.generate-pass {
 
 }
 
-@media(min-width: 480px) {
-    .placeholder-pass {
-        max-width: 43%;
-    }
-}
-
 i {
     width: 5.5%;
     text-align: center;
-    font-size: 1.5rem;
     color: #D5D4D8;
 }
 
-@media(min-width: 600px) {
-    i {
-        font-size: 2rem;
-    }
+i:active {
+    transform: scale(0.98);
 }
 
 .clear-btn {
@@ -227,4 +245,18 @@ i {
 .clear-btn:hover,
 .clear-btn:focus {
     background-color: #374151;
+}
+
+footer{
+    padding-top: 1em;
+    margin: 0 auto;
+    color: #D5D4D8;
+    opacity: 0.4;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }

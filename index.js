@@ -153,24 +153,35 @@ function clearDisplayPassword() {
     numValue.innerHTML = rangeNumEl.value
     symbolValue.innerHTML = rangeSymbolEl.value
 
+    showPass1 = 0
+    showPass2 = 0
+
     reset()
 }
 
 function copyPass1() {
     navigator.clipboard.writeText(displayPass1.innerHTML)
 
-    displayPass1.innerHTML = `<P>Copied</p>`
-    setTimeout(() => {
-        displayPass1.innerHTML = showPass1
-    }, 500)
+    if (showPass1) {
+        displayPass1.innerHTML = `<P>Copied</p>`
+        setTimeout(() => {
+            displayPass1.innerHTML = showPass1
+        }, 500)
+    }
 }
 function copyPass2() {
     navigator.clipboard.writeText(displayPass2.innerHTML)
 
-    displayPass2.innerHTML = `<P>Copied</p>`
-    setTimeout(() => {
-        displayPass2.innerHTML = showPass1
-    }, 500)
+    if (showPass2) {
+        displayPass2.innerHTML = `<P>Copied</p>`
+        setTimeout(() => {
+            displayPass2.innerHTML = showPass1
+        }, 500)
+    }
+}
+
+function updateYear(){
+    document.getElementById("copy-right-year").innerHTML = new Date().getFullYear()
 }
 
 generatePassBtn.addEventListener("click", generatePass)
@@ -178,3 +189,5 @@ clearBtn.addEventListener("click", clearDisplayPassword)
 
 copyDisplayPass1.addEventListener("click", copyPass1)
 copyDisplayPass2.addEventListener("click", copyPass2)
+
+updateYear()
